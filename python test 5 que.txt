@@ -1,0 +1,470 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "e9cc9473",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "rollno is 101\n"
+     ]
+    }
+   ],
+   "source": [
+    "rollno=101 \n",
+    "name=\"rajesh\" \n",
+    "print(\"rollno is {}\".format(rollno))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "a36706ce",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['a', 'x', 'y', 'z', ['d', 'e', 'h', 'f'], 'p', 'o', 'r', 'g']\n"
+     ]
+    }
+   ],
+   "source": [
+    "x=[\"a\",\"x\",\"y\",\"z\",[\"d\",\"e\",\"f\"],\"p\",\"o\",\"r\"]\n",
+    "x.append(\"g\")\n",
+    "x[4].insert(2,\"h\")\n",
+    "print(x)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "64a445cb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'rollno': 101, 'name': 'ajay', 'fees': 4000}\n"
+     ]
+    }
+   ],
+   "source": [
+    "student={\"rollno\":101,\"name\":\"ajay\"}\n",
+    "student[\"fees\"]=4000\n",
+    "print(student)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "a107de52",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{2, 3, 4, 5, 8}\n"
+     ]
+    }
+   ],
+   "source": [
+    "a={2,3,4,5}\n",
+    "a.add(2)\n",
+    "a.add(8)\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "caaca440",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(2, 3, 4, 6, 7)\n"
+     ]
+    }
+   ],
+   "source": [
+    "x=(2,3,4,6)\n",
+    "y=list(x)\n",
+    "y.append(7)\n",
+    "x=tuple(y)\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "699d48cc",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Sample DataFrame:\n",
+      "      Name  Age  Score\n",
+      "0    Alice   24   85.5\n",
+      "1      Bob   27   90.0\n",
+      "2  Charlie   22   78.0\n",
+      "3    David   32   88.0\n",
+      "4      Eva   29   92.5\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "\n",
+    "data = {\n",
+    "    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],\n",
+    "    'Age': [24, 27, 22, 32, 29],\n",
+    "    'Score': [85.5, 90.0, 78.0, 88.0, 92.5]\n",
+    "}\n",
+    "\n",
+    "df = pd.DataFrame(data)\n",
+    "\n",
+    "print(\"Sample DataFrame:\")\n",
+    "print(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "1472270f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0    24\n",
+      "1    27\n",
+      "2    22\n",
+      "3    32\n",
+      "4    29\n",
+      "Name: Age, dtype: int64\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(df['Age'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "26a823a3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "DataFrame after adding 'Age_Squared' column:\n",
+      "\n",
+      "      Name  Age  Score  Age_Squared\n",
+      "0    Alice   24   85.5          576\n",
+      "1      Bob   27   90.0          729\n",
+      "2  Charlie   22   78.0          484\n",
+      "3    David   32   88.0         1024\n",
+      "4      Eva   29   92.5          841\n"
+     ]
+    }
+   ],
+   "source": [
+    "df['Age_Squared'] = np.square(df['Age'])\n",
+    "print(\"DataFrame after adding 'Age_Squared' column:\\n\")\n",
+    "print(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "f96bc23c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df['Adjusted_Score'] = df['Score'] + 5 "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "a23dab09",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Name</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>Score</th>\n",
+       "      <th>Age_Squared</th>\n",
+       "      <th>Adjusted_Score</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Alice</td>\n",
+       "      <td>24</td>\n",
+       "      <td>85.5</td>\n",
+       "      <td>576</td>\n",
+       "      <td>90.5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Bob</td>\n",
+       "      <td>27</td>\n",
+       "      <td>90.0</td>\n",
+       "      <td>729</td>\n",
+       "      <td>95.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>Charlie</td>\n",
+       "      <td>22</td>\n",
+       "      <td>78.0</td>\n",
+       "      <td>484</td>\n",
+       "      <td>83.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>David</td>\n",
+       "      <td>32</td>\n",
+       "      <td>88.0</td>\n",
+       "      <td>1024</td>\n",
+       "      <td>93.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>Eva</td>\n",
+       "      <td>29</td>\n",
+       "      <td>92.5</td>\n",
+       "      <td>841</td>\n",
+       "      <td>97.5</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      Name  Age  Score  Age_Squared  Adjusted_Score\n",
+       "0    Alice   24   85.5          576            90.5\n",
+       "1      Bob   27   90.0          729            95.0\n",
+       "2  Charlie   22   78.0          484            83.0\n",
+       "3    David   32   88.0         1024            93.0\n",
+       "4      Eva   29   92.5          841            97.5"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "ba05f245",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Age</th>\n",
+       "      <th>Score</th>\n",
+       "      <th>Age_Squared</th>\n",
+       "      <th>Adjusted_Score</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>count</th>\n",
+       "      <td>5.000000</td>\n",
+       "      <td>5.000000</td>\n",
+       "      <td>5.000000</td>\n",
+       "      <td>5.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>mean</th>\n",
+       "      <td>26.800000</td>\n",
+       "      <td>86.800000</td>\n",
+       "      <td>730.800000</td>\n",
+       "      <td>91.800000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>std</th>\n",
+       "      <td>3.962323</td>\n",
+       "      <td>5.552027</td>\n",
+       "      <td>213.884782</td>\n",
+       "      <td>5.552027</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>min</th>\n",
+       "      <td>22.000000</td>\n",
+       "      <td>78.000000</td>\n",
+       "      <td>484.000000</td>\n",
+       "      <td>83.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25%</th>\n",
+       "      <td>24.000000</td>\n",
+       "      <td>85.500000</td>\n",
+       "      <td>576.000000</td>\n",
+       "      <td>90.500000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>50%</th>\n",
+       "      <td>27.000000</td>\n",
+       "      <td>88.000000</td>\n",
+       "      <td>729.000000</td>\n",
+       "      <td>93.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75%</th>\n",
+       "      <td>29.000000</td>\n",
+       "      <td>90.000000</td>\n",
+       "      <td>841.000000</td>\n",
+       "      <td>95.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>max</th>\n",
+       "      <td>32.000000</td>\n",
+       "      <td>92.500000</td>\n",
+       "      <td>1024.000000</td>\n",
+       "      <td>97.500000</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "             Age      Score  Age_Squared  Adjusted_Score\n",
+       "count   5.000000   5.000000     5.000000        5.000000\n",
+       "mean   26.800000  86.800000   730.800000       91.800000\n",
+       "std     3.962323   5.552027   213.884782        5.552027\n",
+       "min    22.000000  78.000000   484.000000       83.000000\n",
+       "25%    24.000000  85.500000   576.000000       90.500000\n",
+       "50%    27.000000  88.000000   729.000000       93.000000\n",
+       "75%    29.000000  90.000000   841.000000       95.000000\n",
+       "max    32.000000  92.500000  1024.000000       97.500000"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "8d7bb1ed",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Mean and Standard Deviation of Age:\n",
+      "Mean Age: 26.8\n",
+      "Standard Deviation of Age: 3.54400902933387\n"
+     ]
+    }
+   ],
+   "source": [
+    "mean_age = np.mean(df['Age'])\n",
+    "std_age = np.std(df['Age'])\n",
+    "print(\"\\nMean and Standard Deviation of Age:\")\n",
+    "print(f\"Mean Age: {mean_age}\")\n",
+    "print(f\"Standard Deviation of Age: {std_age}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0882482f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
